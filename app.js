@@ -1,18 +1,30 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3001;
 
 const posts = require("./post");
 
-console.log(posts);
 
 
 
 app.get("/", (req, res) =>{
 
-    res.send("Server del mio blog");
-    
+    res.send("Server del mio blog"); 
 
+});
+
+
+app.get("/bacheca", (req, res) =>{
+
+    const postObj ={
+        posts,
+        cont : posts.length
+    }
+
+    res.json(postObj);
+    
+    
+    
 });
 
 
